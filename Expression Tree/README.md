@@ -1,12 +1,88 @@
-# expression-tree-gen
-Building an expression tree of an arithmetic expression is something quite useful and it is one of the steps a compilers must take to generate machine code.
+# 🌳 Expression Tree Visualizer
 
-With that in mind, and inspired on my lectures on the tree data structure I decided to create a web app that simulates the creation of such a tree given an expression.
+A modern and interactive application that allows users to input mathematical expressions and visualize them as structured binary expression trees.  
+This project is designed to demonstrate how expressions are parsed, represented, and traversed using tree data structures.
+---
+[Click To Visit The Website !](https://expressiontreeproject.vercel.app/)
+---
 
-Visit this [website](https://lnogueir.github.io/expression-tree-gen/) to simulate an expression yourself.
+## 🚀 Features
 
-## Credits:
+- 🔢 Input any valid arithmetic expression (e.g., `3 + 5 * (2 - 8)`)
+- 🌳 Automatic construction of the Expression Tree
+- 🎯 Visual representation of the tree structure
+- 🔁 Tree traversal methods:
+  - Inorder
+  - Preorder
+  - Postorder
+- 🌐 Multi-language support (Arabic / English toggle)
+- 🎨 Clean and modern UI with soft green gradients
+- 👨‍💻 Developer profile section with social links
 
-* This [article](https://llimllib.github.io/pymag-trees/) which helped me a lot introducing me to Knuth's algorithm for the layout of the tree.
-* This [article](http://ice-web.cc.gatech.edu/ce21/1/static/audio/static/pythonds/BasicDS/InfixPrefixandPostfixExpressions.html) which introduced me to Dijkstra's Shunting-yard algorithm.
-* The [mycodeschool](https://www.youtube.com/user/mycodeschool) youtube channel with great videos explaning the algorithms said above.
+---
+
+## 🧠 How It Works
+
+1. The user enters a mathematical expression.
+2. The system parses the expression using standard operator precedence.
+3. The expression is converted into a binary tree:
+   - Operators → Internal nodes
+   - Operands → Leaf nodes
+4. The tree is rendered visually for better understanding.
+5. Traversal algorithms allow exploring the tree in different orders.
+
+---
+
+## 🛠️ Technologies Used
+
+- C++ / Qt (for GUI and rendering)
+- Data Structures (Binary Trees)
+- Object-Oriented Programming (OOP)
+- Custom Tree Drawing Logic
+
+---
+
+## 📸 UI Design
+
+- Minimalistic layout
+- Smooth green gradient theme (not too bright)
+- Clear node connections and spacing
+- Responsive visualization area
+
+---
+
+## 👤 Developer
+
+**Mousa Alawad**
+
+- 📷 Instagram: https://www.instagram.com/1mousa_alawad  
+- 💻 GitHub: https://github.com/MousaAlawad1  
+- ✈️ Telegram: https://t.me/Mousa_Alawad  
+
+---
+
+## 📌 Use Cases
+
+- Educational purposes (Data Structures & Algorithms)
+- Visual learning of expression parsing
+- Debugging mathematical expressions
+- Teaching tree traversals
+
+---
+
+## ⚡ Future Improvements
+
+- Support for more complex expressions (functions, variables)
+- Step-by-step tree construction visualization
+- Export tree as image
+- Animation for traversal processes
+
+---
+
+## 📄 License
+
+This project is open-source and available under the MIT License.
+
+---
+
+> Built with passion for clean design and solid data structure fundamentals.
