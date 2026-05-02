@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+/* ─── Custom Properties ─────────────────────────────── */
+:root {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-tertiary: #21262d;
+  --border-color: #30363d;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #484f58;
+  --blue: #1f6feb;
+  --blue-light: #388bfd;
+  --red: #f78166;
+  --green: #3fb950;
+  --purple: #bc8cff;
+  --edge-color: #30363d;
+}
+
+/* ─── Base ────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Scrollbar styling ──────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ─── SVG tree animations ────────────────────────────── */
+.node circle {
+  transition: fill 0.3s ease, r 0.2s ease, filter 0.3s ease;
+}
+
+.node text {
+  user-select: none;
+  pointer-events: none;
+}
+
+.link {
+  transition: stroke 0.3s ease, stroke-width 0.2s ease;
+}
+
+/* ─── Node pulse animation ───────────────────────────── */
+@keyframes node-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(247, 129, 102, 0.6)); }
+  50% { filter: drop-shadow(0 0 12px rgba(247, 129, 102, 1)); }
+}
+
+.node-active {
+  animation: node-pulse 0.6s ease-in-out infinite;
+}
+
+/* ─── Traversal badge animation ──────────────────────── */
+@keyframes badge-pop {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.traversal-badge {
+  animation: badge-pop 0.25s ease-out forwards;
+}
+
+/* ─── Rotation label animation ───────────────────────── */
+@keyframes rotate-label {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.rotation-label {
+  animation: rotate-label 0.3s ease-out forwards;
+}
+
+/* ─── Mobile bottom sheet ────────────────────────────── */
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.sheet-enter {
+  animation: slide-up 0.3s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
+
+/* ─── Spinner ────────────────────────────────────────── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 0.8s linear infinite;
+}
+
+/* ─── Focus visible ──────────────────────────────────── */
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--blue-light);
+  outline-offset: 2px;
+}
+
+/* ─── Number input arrows hidden ────────────────────── */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* ─── Selection color ────────────────────────────────── */
+::selection {
+  background-color: #1f6feb40;
+  color: var(--text-primary);
+}
+
+/* ─── Tree Canvas SVG ────────────────────────────────── */
+.tree-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.tree-canvas-container svg {
+  display: block;
+}
+
+/* ─── Tooltip on node hover ──────────────────────────── */
+.node:hover .node-tooltip {
+  display: block;
+}
