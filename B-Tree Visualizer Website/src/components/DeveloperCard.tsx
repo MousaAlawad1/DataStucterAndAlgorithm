@@ -13,7 +13,7 @@ export const DeveloperCard: React.FC<DeveloperCardProps> = ({ isOpen, onClose })
     {
       label: 'GitHub',
       handle: '@MousaAlawad1',
-      href: 'https://github.com/MousaAl-awad',
+      href: 'https://github.com/MousaAlawad1',
       icon: <GitFork className="w-4 h-4" />,
       color: 'from-slate-700 to-slate-800 border-slate-600 hover:border-slate-400',
       textColor: 'text-slate-200',
@@ -21,7 +21,7 @@ export const DeveloperCard: React.FC<DeveloperCardProps> = ({ isOpen, onClose })
     {
       label: 'Instagram',
       handle: '@1mousa_alawad',
-      href: 'https://instagram.com/mousa._.alawad',
+      href: 'https://instagram.com/1mousa_alawad',
       icon: (
         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
